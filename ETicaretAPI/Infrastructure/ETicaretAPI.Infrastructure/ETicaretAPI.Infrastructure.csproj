@@ -7,12 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\Storage\AWS\**" />
+    <EmbeddedResource Remove="Services\Storage\AWS\**" />
+    <None Remove="Services\Storage\AWS\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Core\ETicaretAPI.Application\ETicaretAPI.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Storage\Azure\" />
-    <Folder Include="Services\Storage\AWS\" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.12.0" />
   </ItemGroup>
 
 </Project>

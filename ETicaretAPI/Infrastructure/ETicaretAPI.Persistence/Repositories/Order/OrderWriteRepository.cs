@@ -2,12 +2,11 @@
 using ETicaretAPI.Domain.Entities;
 using ETicaretAPI.Persistence.Contexts;
 
-namespace ETicaretAPI.Persistence.Repositories
+namespace ETicaretAPI.Persistence.Repositories;
+
+public class OrderWriteRepository : WriteRepository<Order>, IOrderWriteRepository
 {
-    public class OrderWriteRepository : WriteRepository<Order>, IOrderWriteRepository
+    public OrderWriteRepository(ETicaretAPIDbContext context) : base(context)
     {
-        public OrderWriteRepository(ETicaretAPIDbContext context) : base(context)
-        {
-        }
     }
 }

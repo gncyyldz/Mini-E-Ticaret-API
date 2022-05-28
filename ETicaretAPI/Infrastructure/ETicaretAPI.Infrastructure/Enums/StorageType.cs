@@ -1,9 +1,8 @@
-﻿namespace ETicaretAPI.Infrastructure.Enums
+﻿namespace ETicaretAPI.Infrastructure.Enums;
+
+public enum StorageType
 {
-    public enum StorageType
-    {
-        Local,
-        Azure,
-        AWS
-    }
+    Local,
+    Azure,
+    AWS
 }

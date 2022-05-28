@@ -1,6 +1,5 @@
-﻿namespace ETicaretAPI.Application.Abstractions.Storage.Azure
+﻿namespace ETicaretAPI.Application.Abstractions.Storage.Azure;
+
+public interface IAzureStorage : IStorage
 {
-    public interface IAzureStorage : IStorage
-    {
-    }
 }

@@ -1,8 +1,7 @@
 ﻿using ETicaretAPI.Domain.Entities;
 
-namespace ETicaretAPI.Application.Repositories
+namespace ETicaretAPI.Application.Repositories;
+
+public interface IProductImageFileReadRepository : IReadRepository<ProductImageFile>
 {
-    public interface IProductImageFileReadRepository : IReadRepository<ProductImageFile>
-    {
-    }
 }

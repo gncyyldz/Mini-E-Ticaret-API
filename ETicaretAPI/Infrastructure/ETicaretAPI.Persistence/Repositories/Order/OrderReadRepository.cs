@@ -2,12 +2,11 @@
 using ETicaretAPI.Domain.Entities;
 using ETicaretAPI.Persistence.Contexts;
 
-namespace ETicaretAPI.Persistence.Repositories
+namespace ETicaretAPI.Persistence.Repositories;
+
+public class OrderReadRepository : ReadRepository<Order>, IOrderReadRepository
 {
-    public class OrderReadRepository : ReadRepository<Order>, IOrderReadRepository
+    public OrderReadRepository(ETicaretAPIDbContext context) : base(context)
     {
-        public OrderReadRepository(ETicaretAPIDbContext context) : base(context)
-        {
-        }
     }
 }

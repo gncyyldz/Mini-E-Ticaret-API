@@ -2,12 +2,11 @@
 using ETicaretAPI.Domain.Entities;
 using ETicaretAPI.Persistence.Contexts;
 
-namespace ETicaretAPI.Persistence.Repositories
+namespace ETicaretAPI.Persistence.Repositories;
+
+public class CustomerWriteRepository : WriteRepository<Customer>, ICustomerWriteRepository
 {
-    public class CustomerWriteRepository : WriteRepository<Customer>, ICustomerWriteRepository
+    public CustomerWriteRepository(ETicaretAPIDbContext context) : base(context)
     {
-        public CustomerWriteRepository(ETicaretAPIDbContext context) : base(context)
-        {
-        }
     }
 }

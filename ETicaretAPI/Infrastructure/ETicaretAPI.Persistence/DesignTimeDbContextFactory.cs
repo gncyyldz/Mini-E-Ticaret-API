@@ -2,15 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace ETicaretAPI.Persistence
+namespace ETicaretAPI.Persistence;
+
+public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ETicaretAPIDbContext>
 {
-    public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<ETicaretAPIDbContext>
+    public ETicaretAPIDbContext CreateDbContext(string[] args)
     {
-        public ETicaretAPIDbContext CreateDbContext(string[] args)
-        {
-            DbContextOptionsBuilder<ETicaretAPIDbContext> dbContextOptionsBuilder = new();
-            dbContextOptionsBuilder.UseNpgsql(Configuration.ConnectionString);
-            return new(dbContextOptionsBuilder.Options);
-        }
+        DbContextOptionsBuilder<ETicaretAPIDbContext> dbContextOptionsBuilder = new();
+        dbContextOptionsBuilder.UseNpgsql(Configuration.ConnectionString);
+        return new(dbContextOptionsBuilder.Options);
     }
 }

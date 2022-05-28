@@ -2,12 +2,11 @@
 using ETicaretAPI.Domain.Entities;
 using ETicaretAPI.Persistence.Contexts;
 
-namespace ETicaretAPI.Persistence.Repositories
+namespace ETicaretAPI.Persistence.Repositories;
+
+public class ProductImageFileWriteRepository : WriteRepository<ProductImageFile>, IProductImageFileWriteRepository
 {
-    public class ProductImageFileWriteRepository : WriteRepository<ProductImageFile>, IProductImageFileWriteRepository
+    public ProductImageFileWriteRepository(ETicaretAPIDbContext context) : base(context)
     {
-        public ProductImageFileWriteRepository(ETicaretAPIDbContext context) : base(context)
-        {
-        }
     }
 }

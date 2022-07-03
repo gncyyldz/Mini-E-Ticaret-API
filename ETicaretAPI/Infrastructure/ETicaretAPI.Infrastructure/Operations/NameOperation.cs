@@ -8,47 +8,26 @@ namespace ETicaretAPI.Infrastructure.Operations
 {
     public static class NameOperation
     {
-        public static string CharacterRegulatory(string name)
-            => name.Replace("\"", "")
-                .Replace("!", "")
-                .Replace("'", "")
-                .Replace("^", "")
-                .Replace("+", "")
-                .Replace("%", "")
-                .Replace("&", "")
-                .Replace("/", "")
-                .Replace("(", "")
-                .Replace(")", "")
-                .Replace("=", "")
-                .Replace("?", "")
-                .Replace("_", "")
-                .Replace(" ", "-")
-                .Replace("@", "")
-                .Replace("€", "")
-                .Replace("¨", "")
-                .Replace("~", "")
-                .Replace(",", "")
-                .Replace(";", "")
-                .Replace(":", "")
-                .Replace(".", "-")
-                .Replace("Ö", "o")
-                .Replace("ö", "o")
-                .Replace("Ü", "u")
-                .Replace("ü", "u")
-                .Replace("ı", "i")
-                .Replace("İ", "i")
-                .Replace("ğ", "g")
-                .Replace("Ğ", "g")
-                .Replace("æ", "")
-                .Replace("ß", "")
-                .Replace("â", "a")
-                .Replace("î", "i")
-                .Replace("ş", "s")
-                .Replace("Ş", "s")
-                .Replace("Ç", "c")
-                .Replace("ç", "c")
-                .Replace("<", "")
-                .Replace(">", "")
-                .Replace("|", "");
+         public static string CharacterRegulatory(string name)
+        {
+            int i = name.IndexOfAny(new char[] { 'ş', 'ç', 'ö', 'ğ', 'ü', 'ı', 'ə' });
+            string newName = name.ToLower();
+            if (i > -1)
+            {
+                StringBuilder outPut = new(newName);
+                outPut.Replace('ö', 'o');
+                outPut.Replace('ç', 'c');
+                outPut.Replace('ş', 's');
+                outPut.Replace('ı', 'i');
+                outPut.Replace('ğ', 'g');
+                outPut.Replace('ü', 'u');
+                outPut.Replace('ə', 'e');
+                newName = outPut.ToString();
+            }
+            newName = Regex.Replace(newName, @"[^a-z0-9\s-]", String.Empty);
+            newName = Regex.Replace(newName, @"[\s-]+", "").Trim();
+            newName = Regex.Replace(newName, @"\s", "");
+            return newName;
+        }
     }
 }

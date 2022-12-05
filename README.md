@@ -3,9 +3,9 @@ E-Ticaret-API
 
 
 ## Used:
--Asp.Net Core Web API
--Domain Driven Design Architecture
--EntityFramework Core
--MediatR Pattern
--CQRS Pattern
--SignalR
+- Asp.Net Core Web API
+- Domain Driven Design Architecture
+- EntityFramework Core
+- MediatR Pattern
+- CQRS Pattern
+- SignalR

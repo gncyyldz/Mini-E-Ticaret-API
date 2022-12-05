@@ -1,2 +1,2 @@
-#Mini-E-Ticaret-API
+# Mini-E-Ticaret-API
 E-Ticaret-API

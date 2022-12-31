@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/ETicaretAPI/Infrastructure/ETicaretAPI.Persistence/Örnek Sorgu.txt
+/ETicaretAPI/Presentation/ETicaretAPI.API/appsettings.Production.json

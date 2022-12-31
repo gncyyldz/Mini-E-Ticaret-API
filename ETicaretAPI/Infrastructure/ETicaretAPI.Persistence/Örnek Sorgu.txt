@@ -1,0 +1,16 @@
+﻿CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+do $$
+declare i integer := 1;
+begin
+	while i <= 1000 loop
+
+		INSERT INTO public."Products"
+		("Id", "Name", "Stock", "Price", "CreatedDate", "UpdatedDate")
+		VALUES(uuid_generate_v4(), concat('Product ', i) , floor(random() * 100), floor(random() * 10) * 10, now(), now());
+
+	
+	    i := i + 1;
+	end loop;
+end $$;
+
